@@ -1,6 +1,5 @@
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CenterContainer } from "../CenterContainer";
-import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -12,15 +11,7 @@ export const Header = () => {
           <p className="text-white text-sm">Painel de Controle</p>
         </div>
 
-        <div className="flex items-center gap-2">
-          <Link
-            href="/simulate"
-            className="text-sm font-bold text-white bg-red-500 p-2 rounded-md"
-          >
-            Simular Erro
-          </Link>
-          <ThemeToggle />
-        </div>
+        <ThemeToggle />
       </CenterContainer>
     </div>
   );

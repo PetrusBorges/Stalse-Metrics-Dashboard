@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/Button";
 import { AlertCircle, RefreshCw } from "lucide-react";
-import Link from "next/link";
 
 export default function ErrorBoundary({
   error,
@@ -22,7 +21,6 @@ export default function ErrorBoundary({
             <RefreshCw />
             Tentar novamente
           </Button>
-          <Link href="/">Página Inicial</Link>
         </div>
       </div>
     </div>

@@ -31,7 +31,3 @@ export async function getCampaigns() {
 
   return await response.json();
 }
-
-export async function simulateError() {
-  throw new Error("Successfully simulated error");
-}
