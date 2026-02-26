@@ -2,6 +2,8 @@
 
 Painel de métricas construído com Next.js, React 19 e Tailwind CSS. Exibe gráficos de desempenho de clientes e dados de campanhas em uma interface responsiva com suporte a tema claro/escuro.
 
+🚀 **Demo ao vivo:** [https://stalse-metrics-dashboard.vercel.app/](https://stalse-metrics-dashboard.vercel.app/)
+
 ## Tecnologias
 
 - **Framework:** Next.js 16 (App Router)
@@ -74,12 +76,12 @@ O painel roda na porta `3000` por padrão. O servidor de desenvolvimento usa hot
 
 ## Scripts disponíveis
 
-| Comando          | Descrição                                        |
-|------------------|--------------------------------------------------|
-| `npm run dev`    | Inicia o servidor de desenvolvimento (hot reload) |
-| `npm run build`  | Gera o build de produção otimizado               |
-| `npm run start`  | Roda o build de produção (rode `build` antes)    |
-| `npm run lint`   | Executa o ESLint                                 |
+| Comando         | Descrição                                         |
+| --------------- | ------------------------------------------------- |
+| `npm run dev`   | Inicia o servidor de desenvolvimento (hot reload) |
+| `npm run build` | Gera o build de produção otimizado                |
+| `npm run start` | Roda o build de produção (rode `build` antes)     |
+| `npm run lint`  | Executa o ESLint                                  |
 
 ## Estrutura do projeto
 
@@ -112,6 +114,8 @@ npm run start
 
 Depois acesse [http://localhost:3000](http://localhost:3000).
 
-## Licença
+## Deploy
 
-Projeto privado.
+Este projeto está hospedado na Vercel:
+
+🔗 **Produção:** [https://stalse-metrics-dashboard.vercel.app/](https://stalse-metrics-dashboard.vercel.app/)
