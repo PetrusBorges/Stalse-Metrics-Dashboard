@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stalse Metrics Dashboard
 
-## Getting Started
+Painel de métricas construído com Next.js, React 19 e Tailwind CSS. Exibe gráficos de desempenho de clientes e dados de campanhas em uma interface responsiva com suporte a tema claro/escuro.
 
-First, run the development server:
+## Tecnologias
+
+- **Framework:** Next.js 16 (App Router)
+- **React:** 19.2
+- **Estilização:** Tailwind CSS 4
+- **Gráficos:** Recharts
+- **Componentes UI:** Radix UI, Lucide React
+- **Linguagem:** TypeScript
+
+## Pré-requisitos
+
+Antes de rodar este projeto, certifique-se de ter:
+
+- **Node.js** 18.18 ou superior (ou 20.9+)
+- **npm** 10+ (ou **pnpm**, **yarn**, **bun**)
+
+Para verificar suas versões:
+
+```bash
+node --version
+npm --version
+```
+
+## Passo a passo: Como rodar
+
+### 1. Clone o repositório
+
+```bash
+git clone <url-do-repositório>
+cd Stalse-Metrics-Dashboard
+```
+
+### 2. Instale as dependências
+
+```bash
+npm install
+```
+
+Ou com outro gerenciador de pacotes:
+
+```bash
+pnpm install
+# ou
+yarn install
+# ou
+bun install
+```
+
+### 3. Inicie o servidor de desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
+```
+
+Ou:
+
+```bash
 pnpm dev
-# or
+# ou
+yarn dev
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 4. Abra o app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O painel roda na porta `3000` por padrão. O servidor de desenvolvimento usa hot reload, então alterações no código atualizam a página automaticamente.
 
-## Learn More
+## Scripts disponíveis
 
-To learn more about Next.js, take a look at the following resources:
+| Comando          | Descrição                                        |
+|------------------|--------------------------------------------------|
+| `npm run dev`    | Inicia o servidor de desenvolvimento (hot reload) |
+| `npm run build`  | Gera o build de produção otimizado               |
+| `npm run start`  | Roda o build de produção (rode `build` antes)    |
+| `npm run lint`   | Executa o ESLint                                 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estrutura do projeto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+├── app/
+│   ├── _components/     # Componentes de página (ChartSection, CampaignSection)
+│   ├── api/             # Rotas de API (charts, campaigns)
+│   ├── simulate/        # Página de simulação de erro
+│   ├── actions.ts       # Server actions
+│   ├── page.tsx         # Página inicial
+│   └── error.tsx        # Error boundary
+├── components/
+│   ├── ChartManager/    # Componente de gráficos
+│   └── ui/              # Componentes UI reutilizáveis (Header, Table, Button, etc.)
+```
 
-## Deploy on Vercel
+## Funcionalidades
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Gráficos:** Métricas de desempenho de clientes (evolução em 90 dias)
+- **Tabela de campanhas:** Campanhas ativas e pausadas
+- **Alternar tema:** Alternar entre modo claro e escuro
+- **Error boundary:** Tratamento de erros com página de simulação em `/simulate`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Build para produção
+
+```bash
+npm run build
+npm run start
+```
+
+Depois acesse [http://localhost:3000](http://localhost:3000).
+
+## Licença
+
+Projeto privado.

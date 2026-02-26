@@ -3,10 +3,9 @@
 import { useMemo } from "react";
 import { Card } from "../Card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Button } from "../Button";
 import { cn } from "@/lib/utils";
-import { Skeleton } from "../Skeleton";
 
 interface IColumn {
   header: string;
@@ -14,23 +13,14 @@ interface IColumn {
 }
 
 interface ITableProps {
-  isLoading?: boolean;
   title: string;
   description: string;
   columns: IColumn[];
   data: Record<string, unknown>[];
 }
 
-export const Table = ({
-  isLoading,
-  title,
-  description,
-  data,
-  columns,
-}: ITableProps) => {
+export const Table = ({ title, description, data, columns }: ITableProps) => {
   const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathName = usePathname();
 
   const currentPage = Number(searchParams.get("page") ?? 1);
   const statusFilter = searchParams.get("status") ?? "";
@@ -67,10 +57,9 @@ export const Table = ({
       params.set("page", "1");
     }
 
-    router.push(`${pathName}?${params.toString()}`);
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    window.history.replaceState(null, "", newUrl);
   };
-
-  if (isLoading) return <Skeleton className="h-[460px] w-full" />;
 
   return (
     <Card className="overflow-auto">
@@ -83,7 +72,7 @@ export const Table = ({
           <Button
             className={cn(
               "text-xs",
-              statusFilter === "Ativa" && "bg-[#FF9500]",
+              statusFilter === "Ativa" && "bg-[#FF9500] dark:bg-[#FF9500]",
             )}
             onClick={() => handleUpdateSearchParams("status", "Ativa")}
           >
@@ -92,18 +81,29 @@ export const Table = ({
           <Button
             className={cn(
               "text-xs",
-              statusFilter === "Pausada" && "bg-[#FF9500]",
+              statusFilter === "Pausada" && "bg-[#FF9500] dark:bg-[#FF9500]",
             )}
             onClick={() => handleUpdateSearchParams("status", "Pausada")}
           >
             Pausada
           </Button>
           <Button
-            className={cn("text-xs", !statusFilter && "bg-[#FF9500]")}
+            className={cn(
+              "text-xs",
+              !statusFilter && "bg-[#FF9500] dark:bg-[#FF9500]",
+            )}
             onClick={() => handleUpdateSearchParams("status", "")}
           >
             Todas
           </Button>
+          {/* <Button
+            onClick={() => {
+              "use server";
+              getCampaigns();
+            }}
+          >
+            Atualizar
+          </Button> */}
         </div>
       </div>
 

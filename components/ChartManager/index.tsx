@@ -12,7 +12,6 @@ import { useState } from "react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Skeleton } from "../ui/Skeleton";
 
 const chartConfig = {
   totalClientes: {
@@ -30,7 +29,6 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 interface IChartManagerProps {
-  isLoading?: boolean;
   title: string;
   description: string;
   chartData: {
@@ -42,7 +40,6 @@ interface IChartManagerProps {
 }
 
 export const ChartManager = ({
-  isLoading,
   title,
   description,
   chartData,
@@ -62,8 +59,6 @@ export const ChartManager = ({
     startDate.setDate(startDate.getDate() - daysToSubtract);
     return date >= startDate;
   });
-
-  if (isLoading) return <Skeleton className="h-[350px] w-full" />;
 
   return (
     <Card className="space-y-4">

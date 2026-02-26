@@ -16,7 +16,7 @@ export const Button = ({
   return (
     <button
       className={cn(
-        "flex items-center justify-center cursor-pointer border rounded-[12px] px-2 py-3 outline-none transition-all duration-300 w-full focus:border-[#FF9500] focus:ring-2 focus:ring-[#FF9500] dark:border-zinc-600 dark:bg-zinc-800",
+        "flex items-center justify-center gap-2 cursor-pointer border rounded-[12px] px-2 py-3 outline-none transition-all duration-300 w-full focus:border-[#FF9500] focus:ring-2 focus:ring-[#FF9500] dark:border-zinc-600 dark:bg-zinc-800",
         isLoading && "opacity-50 cursor-not-allowed",
         className,
       )}
