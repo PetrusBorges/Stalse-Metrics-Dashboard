@@ -4,7 +4,7 @@ import { CenterContainer } from "../CenterContainer";
 export const Header = () => {
   return (
     <div className="bg-[#FF9500] text-center mb-2 py-2">
-      <CenterContainer className="flex flex-col lg:flex-row items-center justify-between gap-2">
+      <CenterContainer className="flex items-center justify-between gap-2">
         <div className="text-start">
           <h2 className="text-white text-2xl font-bold">STALCE</h2>
 
