@@ -14,10 +14,10 @@ export const ThemeToggle = () => {
     <>
       <button
         suppressHydrationWarning
-        className="cursor-pointer absolute bottom-2 right-2 border border-gray-600 rounded-sm p-2"
+        className="cursor-pointer bottom-2 right-2 bg-white transition-all duration-300 hover:bg-gray-300 rounded-sm p-2"
         onClick={handleThemeToggle}
       >
-        <SunMoon />
+        <SunMoon className="w-5 h-5 text-black" />
       </button>
     </>
   );
